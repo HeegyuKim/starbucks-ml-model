@@ -5,6 +5,9 @@ Download the dataset from url and save 3 files in data/ directory
 - data/profile.json
 - data/trainscript.json
 
+See how I did in this article.
+https://medium.com/@heegyukim/who-will-see-the-reward-program-offer-lets-create-the-predicting-model-with-python-aeb45f1376a4
+
 ## Data Understanding.ipynb
 Analyze, visualize the data in Data Understanding notebook.
 한 유저는 여러번 received, viewed, completed 가 발생가능하다
