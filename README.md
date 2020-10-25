@@ -12,11 +12,7 @@ The reward program is a representative marketing method that induces users to pu
 
 ## Requirements
 1. Basic Statistics
-1. Python3
-1. Library usages
-1.
-
-
+1. Basic Python3 & required packages skills
 
 ## Project Structure
 ### data/ 
