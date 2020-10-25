@@ -2,12 +2,20 @@
 # Starbucks-ml-model
 The reward program is a representative marketing method that induces users to purchase. But program that user are not interested in, user may unsubscribe corporate marketing channels or have a negative image. That’s why it’s important to send a SMS, email of reward program to interested users. In this case, the user’s interest is determined by whether or not the user has viewed the program. By creating a model that predicts whether users will see the program, you can deliver the right program to the right users.
 
-# Summary of results
-- By combining the user's information and the user's information on the offers received, a model was created to predict whether or not the received offer was viewed.
-- It was difficult to improve accuracy due to unbalanced data. However, when the F1 score was used as an index, an 0.89 was achieved.
-- The accuracy of predicting not to see the offer was low. It is lower if there is no user information
-- Even without knowing the user information other than the total transaction amount, it was able to predict quite accurately than I expected. That’s interesting.
-- Final Result - Accuracy: 0.9, F1 Score: 0.895
+## Table of Contents
+1. Requirements
+1. Project structure
+1. Installation
+1. Model Training
+1. Result
+
+
+## Requirements
+1. Basic Statistics
+1. Python3
+1. Library usages
+1.
+
 
 
 ## Project Structure
@@ -19,13 +27,24 @@ downloaded file from https://www.kaggle.com/blacktile/starbucks-app-customer-rew
 - Train Dataset: data/train.csv, data/train_transactions.csv
 - Test Dataset: data/test.csv, data/test_transactions.csv
 
-
 ### Notebooks
 - Data Understanding.ipynb: analyze the data and understand the data structure.
 - Data Visualization.ipynb: visualize the data
 - Generate Train-Test Dataset.ipynb: Generate train/test dataset for creating model which predict who will view the offer. 
 
-### Model Training
+## Installation
+Python3 is required. Install required packages by below command.
+```
+pip install -r requirements.txt
+```
+
+### Library used
+- pandas: manage and process the data 
+- numpy: manage the data and conduct mathmatical operations
+- seaborn, matplotlib: show data plot & visualization
+- xgboost, scikit-learn: train, evaluate the model.
+
+## Model Training
 You can train the model using the notebook below
 
 - train_baseline_sklearn.ipynb: Simple baseline model(no transaction in dataset)
@@ -38,32 +57,31 @@ You can train the model using the notebook below
 1. Run "Data preparation.ipynb" to preprocess json files
 1. Run "Generate Train-Test Dataset.ipynb" 
 
-## Training Result
+## Results
 ### Baseline
 ```
-Report for baseline(RandomForest)
+Report for baseline
 Train Report>
-Train Accuracy: 0.9978115614741695
+Train Accuracy: 0.9652451790633609
               precision    recall  f1-score   support
 
-         0.0       1.00      0.99      1.00      9886
-         1.0       1.00      1.00      1.00     33067
+         0.0       0.96      0.89      0.92     10469
+         1.0       0.97      0.99      0.98     34906
 
-    accuracy                           1.00     42953
-   macro avg       1.00      1.00      1.00     42953
-weighted avg       1.00      1.00      1.00     42953
+    accuracy                           0.97     45375
+   macro avg       0.96      0.94      0.95     45375
+weighted avg       0.97      0.97      0.96     45375
 
 Test Report>
-Test Accuracy: 0.8160577356788453
+Test Accuracy: 0.8009053464377472
               precision    recall  f1-score   support
 
-         0.0       0.62      0.61      0.62      5362
-         1.0       0.88      0.88      0.88     16808
+         0.0       0.62      0.50      0.56      6102
+         1.0       0.85      0.90      0.87     18419
 
-    accuracy                           0.82     22170
-   macro avg       0.75      0.75      0.75     22170
-weighted avg       0.82      0.82      0.82     22170
-
+    accuracy                           0.80     24521
+   macro avg       0.73      0.70      0.71     24521
+weighted avg       0.79      0.80      0.79     24521
 ```
 
 ### Simple model

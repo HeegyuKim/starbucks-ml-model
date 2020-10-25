@@ -3,6 +3,5 @@ pandas
 numpy
 matplotlib
 seaborn
-torch
 xgboost
-visdom
+scikit-learn
